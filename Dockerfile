@@ -1,4 +1,13 @@
 FROM debian:stable-slim
-RUN apt update && apt install -y chkrootkit
-RUN rm -rf /usr/share/doc/ && rm -rf /usr/share/man && rm -rf /usr/share/locale/
+
+ENV RUNTIME_ENV container
+
+RUN apt update && \
+        apt install -y chkrootkit
+
+RUN rm -rf \
+        /usr/share/doc/ \
+        /usr/share/man/ \
+        /usr/share/locale/ \
+
 CMD ["chkrootkit", "-r", "/dest"]
