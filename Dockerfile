@@ -8,6 +8,6 @@ RUN apt update && \
 RUN rm -rf \
         /usr/share/doc/ \
         /usr/share/man/ \
-        /usr/share/locale/ \
+        /usr/share/locale/
 
 CMD ["chkrootkit", "-r", "/dest"]
